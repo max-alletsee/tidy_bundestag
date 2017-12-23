@@ -115,9 +115,9 @@ tidy_bundestag1949_states <- filter(tidy_bundestag1949, district_no > 900)
 # Data Export
 
 # export results
-save(tidy_bundestag1949_districts, tidy_bundestag1949_states, file = "data_tidy/tidy_bundestag1949.Rdata")
-# write.csv2(tidy_bundestag1949_districts, file = "data_tidy/tidy_bundestag1949_districts.csv")
-# write.csv2(tidy_bundestag1949_states, file = "data_tidy/tidy_bundestag1949_states.csv")
+save(tidy_bundestag1949_districts, tidy_bundestag1949_states, file = "../data_tidy/tidy_bundestag1949.Rdata")
+# write.csv2(tidy_bundestag1949_districts, file = "../data_tidy/tidy_bundestag1949_districts.csv")
+# write.csv2(tidy_bundestag1949_states, file = "../data_tidy/tidy_bundestag1949_states.csv")
 
 # clean up workspace
 rm(list = c("data1949_context", "data1949_long", "data1949_raw", "data1949_reduced", "na_per_col", "na_per_row", "partynames", "tidy_bundestag1949"))

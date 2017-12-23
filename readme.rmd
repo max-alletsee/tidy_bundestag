@@ -7,7 +7,9 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This repository contains R code to create tidy datasets for the German Bundestag election results. The original data is provided by the [Federal Returning Officer (Bundeswahlleiter)](https://www.bundeswahlleiter.de/). The concept of tidy data is explained by Hadley Wickham [in his article "Tidy Data"](https://www.jstatsoft.org/article/view/v059i10/v59i10.pdf) in the *Journal of Statistical Software* (2014, Vol. 59, Issue 10).
+This repository contains R code to create tidy datasets for the German Bundestag election results.
+
+The original data is provided by the [Federal Returning Officer (Bundeswahlleiter)](https://www.bundeswahlleiter.de/). The concept of tidy data is explained by Hadley Wickham [in his article "Tidy Data"](https://www.jstatsoft.org/article/view/v059i10/v59i10.pdf) in the *Journal of Statistical Software* (2014, Vol. 59, Issue 10).
 
 Note that this is currently work in progress: I started with the 1949 Bundestag elections and will slowly work towards more recent elections. This project has been inspired by similar projects from [Arndt Leininger](https://gitlab.com/arndtl/tidy_kerg) and [Marie-Louise Timcke](https://interaktiv.morgenpost.de/analyse-bundestagswahl-2017/data/btw17_analysis.html) who both focused on the 2017 elections.
 
@@ -43,4 +45,4 @@ The Federal Returning Officer provides a PDF file with an overview of all Bundes
 
 Moreover, there are separate websites with the results for each election as well the possibility to download the raw data:
 
-* 1949 Bundestag elections: [website](https://bundeswahlleiter.de/bundestagswahlen/1949.html), [raw csv data)](https://bundeswahlleiter.de/dam/jcr/d1ffdb9b-3d79-45a3-8e25-6a867c34d202/btw49_kerg.csv) 
+* 1949 Bundestag elections: [website](https://bundeswahlleiter.de/bundestagswahlen/1949.html), [raw csv data](https://bundeswahlleiter.de/dam/jcr/d1ffdb9b-3d79-45a3-8e25-6a867c34d202/btw49_kerg.csv) 
