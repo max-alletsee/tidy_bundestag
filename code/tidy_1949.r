@@ -92,11 +92,12 @@ tidy_bundestag1949_states <- filter(tidy_bundestag1949, district_no > 900)
 #   group_by(state, party_short) %>%
 #   summarize(state_votecount = sum(votes_party_district))
 # 
-# check_votecount <- left_join(x = check_votecount, y = tidy_bundestag1949_state,
+# check_votecount <- left_join(x = check_votecount, y = tidy_bundestag1949_states,
 #                              by = c("state" = "state", "party_short" = "party_short"))
 # 
 # check_votecount <- select(check_votecount, state, party_short, state_votecount, votes_party_district)
 # check_votecount$check <- check_votecount$state_votecount == check_votecount$votes_party_district
+# table(check_votecount$check)
 # rm(check_votecount) # to remove this check object from the workspace again
 
 ## Check 2: External Check
@@ -120,5 +121,5 @@ save(tidy_bundestag1949_districts, tidy_bundestag1949_states, file = "../data_ti
 # write.csv2(tidy_bundestag1949_states, file = "../data_tidy/tidy_bundestag1949_states.csv")
 
 # clean up workspace
-rm(list = c("data1949_context", "data1949_long", "data1949_raw", "data1949_reduced", "na_per_col", "na_per_row", "partynames", "tidy_bundestag1949"))
+rm(list=setdiff(ls(), c("tidy_bundestag1949_districts", "tidy_bundestag1949_states")))
 

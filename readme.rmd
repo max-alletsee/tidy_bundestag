@@ -46,3 +46,4 @@ The Federal Returning Officer provides a PDF file with an overview of all Bundes
 Moreover, there are separate websites with the results for each election as well the possibility to download the raw data:
 
 * 1949 Bundestag elections: [website](https://bundeswahlleiter.de/bundestagswahlen/1949.html), [raw csv data](https://bundeswahlleiter.de/dam/jcr/d1ffdb9b-3d79-45a3-8e25-6a867c34d202/btw49_kerg.csv) 
+* 1953 Bundestag elections: [website](https://www.bundeswahlleiter.de/bundestagswahlen/1953.html), [raw csv data](https://www.bundeswahlleiter.de/dam/jcr/44e3b6bb-dfd4-4474-a9e5-7d57b507339e/btw53_kerg.csv)
