@@ -67,9 +67,26 @@ tidy_bundestag1949$voteshare_party_district <- tidy_bundestag1949$votes_party_di
 tidy_bundestag1949$vote_type <- "Zweitstimme" # note: the 1949 electoral system only had a proportional component, closely resembling the "Zweitstimme" in later versions of the German federal electoral system
 
 # create variable with long party name (merge via external dataset)
-partynames <- data.frame(party_short = c("SPD", "CDU", "FDP", "CSU", "KPD", "Parteilose", "BP", "DP", "Zentrum", "WAV", "DKP.DRP", "RSF", "SSW", "EVD", "RWVP"),
-                         party_long = c("Sozialdemokratische Partei Deutschlands", "Christlich-Demokratische Union Deutschlands", "Freie Demokratische Partei", "Christlich-soziale Union in Bayern", "Kommunistische Partei Deutschlands", "Parteilose", "Bayernpartei", "Deutsche Partei", "Deutsche Zentrums-Partei", "Wirtschaftliche Aufbau-Vereinigung", "Deutsche Konservative Partei – Deutsche Rechtspartei", "Radikal-Soziale Freiheitspartei", "Südschleswigscher Wählerverband", "Sammlung zur Tat/Europäische Volksbewegung Deutschlands", "Rheinisch-Westfälische Volkspartei"))
 
+partynames <- as.data.frame(rbind(
+  c("SPD", "Sozialdemokratische Partei Deutschlands"),
+  c("CDU", "Christlich-Demokratische Union Deutschlands"),
+  c("FDP", "Freie Demokratische Partei"),
+  c("CSU", "Christlich-soziale Union in Bayern"),
+  c("KPD", "Kommunistische Partei Deutschlands"),
+  c("Parteilose", "Parteilose"),
+  c("BP", "Bayernpartei"),
+  c("DP", "Deutsche Partei"),
+  c("Zentrum", "Deutsche Zentrums-Partei"),
+  c("WAV", "Wirtschaftliche Aufbau-Vereinigung"),
+  c("DKP.DRP", "Deutsche Konservative Partei – Deutsche Rechtspartei"),
+  c("RSF", "Radikal-Soziale Freiheitspartei"),
+  c("SSW", "Südschleswigscher Wählerverband"),
+  c("EVD", "Sammlung zur Tat/Europäische Volksbewegung Deutschlands"),
+  c("RWVP", "Rheinisch-Westfälische Volkspartei")
+))
+
+colnames(partynames) <- c("party_short", "party_long")
 partynames[] <- lapply(partynames, as.character) # convert all variables to characters
 
 tidy_bundestag1949 <- left_join(x = tidy_bundestag1949, y = partynames, by = "party_short")

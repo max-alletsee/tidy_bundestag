@@ -7,7 +7,6 @@
 
 library(tidyr)
 library(dplyr)
-library(stringr)
 
 #----------------------- 
 # Loading Data
@@ -99,13 +98,30 @@ tidy_bundestag1953 <- bind_rows(data1953_erst_long, data1953_zweit_long)
 
 # create voteshare variable
 tidy_bundestag1953$voteshare_party_district <- tidy_bundestag1953$votes_party_district / tidy_bundestag1953$validvotes_district * 100
-tidy_bundestag1953$vote_type <- str_replace(string = tidy_bundestag1953$vote_type, pattern = "stimmen", replacement = "stimme")
+tidy_bundestag1953$vote_type <- gsub(pattern = "stimmen", replacement = "stimme", x = tidy_bundestag1953$vote_type)
 
 
 # create variable with long party name (merge via external dataset)
-partynames <- data.frame(party_short = c("SPD", "CDU", "FDP", "CSU", "GB/BHE", "DP", "KPD", "BP", "GVP", "DRP", "Zentrum", "DNS", "SSW", "SHLP", "PdgD", "Übrige"), 
-                         party_long = c("Sozialdemokratische Partei Deutschlands", "Christlich-Demokratische Union Deutschlands", "Freie Demokratische Partei", "Christlich-soziale Union in Bayern", "Gesamtdeutscher Block/Bund der Heimatvertriebenen und Entrechteten", "Deutsche Partei", "Kommunistische Partei Deutschlands", "Bayernpartei", "Gesamtdeutsche Volkspartei", "Deutsche Reichspartei", "Deutsche Zentrumspartei", "Dachverband der Nationalen Sammlung", "Südschleswigscher Wählerverband", "Schleswig-Holsteinische Landespartei", "Partei der guten Deutschen", "Übrige Wählergruppen/Einzelbewerber"))
+partynames <- as.data.frame(rbind(
+  c("SPD", "Sozialdemokratische Partei Deutschlands"),
+  c("CDU", "Christlich-Demokratische Union Deutschlands"),
+  c("FDP", "Freie Demokratische Partei"),
+  c("CSU", "Christlich-soziale Union in Bayern"),
+  c("GB/BHE", "Gesamtdeutscher Block/Bund der Heimatvertriebenen und Entrechteten"),
+  c("DP", "Deutsche Partei"),
+  c("KPD", "Kommunistische Partei Deutschlands"),
+  c("BP", "Bayernpartei"),
+  c("GVP", "Gesamtdeutsche Volkspartei"),
+  c("DRP", "Deutsche Rechtspartei"),
+  c("Zentrum", "Deutsche Zentrums-Partei"),
+  c("DNS", "Dachverband der Nationalen Sammlung"),
+  c("SSW", "Südschleswigscher Wählerverband"),
+  c("SHLP", "Schleswig-Holsteinische Landespartei"),
+  c("PdgD", "Partei der guten Deutschen"),
+  c("Übrige", "Übrige Wählergruppen/Einzelbewerber")
+))
 
+colnames(partynames) <- c("party_short", "party_long")
 partynames[] <- lapply(partynames, as.character) # convert all variables to characters
 
 tidy_bundestag1953 <- left_join(x = tidy_bundestag1953, y = partynames, by = "party_short")
@@ -147,7 +163,7 @@ tidy_bundestag1953_states <- filter(tidy_bundestag1953, district_no > 900)
 #   View()
 
 # Source 1 - Wikipedia: https://de.wikipedia.org/wiki/Bundestagswahl_1953#Amtliches_Endergebnis
-# Source 2 - Federal Returning Officer: https://www.bundeswahlleiter.de/bundestagswahlen/1949.html
+# Source 2 - Federal Returning Officer: https://www.bundeswahlleiter.de/bundestagswahlen/1953.html
 
 #----------------------- 
 # Data Export
