@@ -48,5 +48,8 @@ Moreover, there are separate websites with the results for each election as well
 -   1957 Bundestag elections: [website](https://www.bundeswahlleiter.de/bundestagswahlen/1957.html), [raw csv data](https://www.bundeswahlleiter.de/dam/jcr/6410974f-692e-466c-9fcb-98b1428cc73f/btw57_kerg.csv)
 -   1961 Bundestag elections: [website](https://www.bundeswahlleiter.de/bundestagswahlen/1961.html), [raw csv data](https://www.bundeswahlleiter.de/dam/jcr/31655810-7fd3-46bd-827c-98e0fd39661f/btw61_kerg.csv)
 -   1965 Bundestag elections: [website](https://www.bundeswahlleiter.de/bundestagswahlen/1965.html), [raw csv data](https://www.bundeswahlleiter.de/dam/jcr/326bd367-22d9-4a81-9800-1e159460a6f0/btw65_kerg.csv)
+-   1969 Bundestag elections: [website](https://www.bundeswahlleiter.de/bundestagswahlen/1969.html), [raw csv data](https://www.bundeswahlleiter.de/dam/jcr/a372364b-236e-430f-855c-8014ea17700f/btw69_kerg.csv)
+-   1972 Bundestag elections: [website](https://www.bundeswahlleiter.de/bundestagswahlen/1972.html), [raw csv data](https://www.bundeswahlleiter.de/dam/jcr/9b3b215a-2f4e-42b5-9abe-1f8b73e6717a/btw72_kerg.csv)
+-   1976 Bundestag elections: [website](https://www.bundeswahlleiter.de/bundestagswahlen/1976.html), [raw csv data](https://www.bundeswahlleiter.de/dam/jcr/eb10180e-d751-4827-8e12-94818bd0992c/btw76_kerg.csv)
 -   *(some elections are still missing here)*
 -   2005 Bundestag elections: [website](https://www.bundeswahlleiter.de/bundestagswahlen/2005.html), [raw csv data](https://www.bundeswahlleiter.de/dam/jcr/01e65a67-6d5b-47ee-b8ec-0fd243493ebc/btw05_kerg.csv)
